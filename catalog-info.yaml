@@ -3,9 +3,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
-    github.com/project-slug: Unity-Technologies/paper-ma-poca
+    github.com/project-slug: Unity-Technologies/paper-ml-agents
   name: paper-ma-poca
-  description: A repository to reproduce the experiments of the MA-POCA paper
+  description: A repository to reproduce the experiments of papers published with ml-agents
   labels:
     costcenter: "5160"
   tags:
