@@ -3,8 +3,10 @@
 /summaries
 # Output Artifacts
 /results
+*/results
 # Output Builds
 /Builds
+*/Builds
 
 # Training environments
 /envs
