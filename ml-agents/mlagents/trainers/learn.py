@@ -17,6 +17,7 @@ from mlagents.trainers.directory_utils import validate_existing_directories
 from mlagents.trainers.stats import StatsReporter
 from mlagents.trainers.cli_utils import parser
 from mlagents_envs.environment import UnityEnvironment
+from mlagents.particles_env import ParticlesEnvironment
 from mlagents.trainers.settings import RunOptions
 
 from mlagents.trainers.training_status import GlobalTrainingStatus
@@ -181,6 +182,7 @@ def create_environment_factory(
             side_channels=side_channels,
             log_folder=log_folder,
         )
+        # return ParticlesEnvironment(worker_id=worker_id)
 
     return create_unity_environment
 
