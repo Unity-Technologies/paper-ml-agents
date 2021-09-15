@@ -1,0 +1,20 @@
+# For more information about the available options please visit: http://go/backstage (VPN required)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    github.com/project-slug: Unity-Technologies/paper-ma-poca
+  name: paper-ma-poca
+  description: A repository to reproduce the experiments of the MA-POCA paper
+  labels:
+    costcenter: "5160"
+  tags:
+    - planned-public
+  links:
+    - url: https://unity.slack.com/messages/C02BRPA0LC9/
+      title: "#devs-ai-amlr"
+      icon: chat
+spec:
+  type: other
+  lifecycle: production
+  owner: unity-technologies/machine learning
