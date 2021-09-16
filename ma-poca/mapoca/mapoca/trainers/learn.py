@@ -31,6 +31,7 @@ from mlagents_envs.timers import (
 )
 from mlagents_envs import logging_util
 from mapoca.plugins.stats_writer import register_stats_writer_plugins
+from mapoca.registry_entries import mapoca_registry
 
 logger = logging_util.get_logger(__name__)
 
@@ -84,10 +85,8 @@ def run_training(run_seed: int, options: RunOptions) -> None:
         for sw in stats_writers:
             StatsReporter.add_writer(sw)
 
-        if env_settings.env_path is None:
-            port = None
         env_factory = create_environment_factory(
-            env_settings.env_path,
+            env_settings.env_name,
             engine_settings.no_graphics,
             run_seed,
             port,
@@ -160,7 +159,7 @@ def write_timing_tree(output_dir: str) -> None:
 
 
 def create_environment_factory(
-    env_path: Optional[str],
+    env_name: Optional[str],
     no_graphics: bool,
     seed: int,
     start_port: Optional[int],
@@ -172,8 +171,7 @@ def create_environment_factory(
     ) -> UnityEnvironment:
         # Make sure that each environment gets a different seed
         env_seed = seed + worker_id
-        return UnityEnvironment(
-            file_name=env_path,
+        return mapoca_registry[env_name].make(
             worker_id=worker_id,
             seed=env_seed,
             no_graphics=no_graphics,

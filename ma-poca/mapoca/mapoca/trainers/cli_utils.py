@@ -70,7 +70,7 @@ def _create_parser() -> argparse.ArgumentParser:
     argparser.add_argument(
         "--env",
         default=None,
-        dest="env_path",
+        dest="env_name",
         help="Path to the Unity executable to train",
         action=DetectDefault,
     )
