@@ -69,7 +69,7 @@ setup(
         ],
         # Plugins - each plugin type should have an entry here for the default behavior
         ML_AGENTS_STATS_WRITER: [
-            "default=mlagents.plugins.stats_writer:get_default_stats_writers"
+            "default=mapoca.plugins.stats_writer:get_default_stats_writers"
         ],
     },
 )
